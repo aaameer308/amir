@@ -6,6 +6,7 @@ public class IntelligenceMission extends Mission implements  MissionService{
 
     private  String region;
 
+
     public IntelligenceMission(String region, Coordinates coordinatesToAttack) {
         super(coordinatesToAttack);
         this.region=region;
@@ -15,5 +16,10 @@ public class IntelligenceMission extends Mission implements  MissionService{
     public String misiionAction() {
         return  this.region;
 
+    }
+
+
+    public void setmisiionAction(String region) {
+        this.region = region;
     }
 }

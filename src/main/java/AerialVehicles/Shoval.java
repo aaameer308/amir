@@ -1,7 +1,7 @@
 package AerialVehicles;
 
-import Missions.AttackMission;
-import Missions.IntelligenceMission;
+import Missions.BdaMission;
+import Missions.Mission;
 
 public class Shoval extends AerialVehicle implements  AerialVehicleService , AerialIntelligenceVehicle , AerialBdaVehicle , AerialAttackVehicle {
 
@@ -12,14 +12,21 @@ public class Shoval extends AerialVehicle implements  AerialVehicleService , Aer
     String sensorType = null;
     String cameraType =null;
 
-    public Shoval(String pilotName, AttackMission attackMission, int flyingHours, boolean flightStatus) {
+
+
+    public Shoval(String s, int i, String spice250, String sensorType, String pilotName, BdaMission attackMission, int flyingHours, boolean flightStatus) {
         super(pilotName, attackMission, flyingHours, flightStatus);
+        this.numOfMissiles=i;
+        this.tyoeOfMissiles=s;
+        this.cameraType=spice250;
+        this.sensorType=sensorType;
+
     }
 
     @Override
-    public void setMission(IntelligenceMission intelligenceMission) {
+    public void setMission(Mission intelligenceMission) {
         this.mission.setCoordinates(intelligenceMission.coordinates);
-
+        this.mission.setmisiionAction(intelligenceMission.misiionAction());
     }
 
     @Override
@@ -62,7 +69,7 @@ public class Shoval extends AerialVehicle implements  AerialVehicleService , Aer
     @Override
     public String attack() {
 
-        String str =this.pilotName + " " + this.getClass().getName() + " " + this.mission.misiionAction() + " "
+        String str =this.pilotName + " " + this.getClass().getSimpleName() + " " + this.mission.misiionAction() + " "
                 +  this.tyoeOfMissiles + "X" +  this.numOfMissiles ;
 
         return str;
@@ -71,7 +78,7 @@ public class Shoval extends AerialVehicle implements  AerialVehicleService , Aer
     @Override
     public String preformBda() {
 
-        String str = this.pilotName + " " + this.getClass().getName() + " " +
+        String str = this.pilotName + " " + this.getClass().getSimpleName() + " " +
                 this.mission.misiionAction() + " " +  this.cameraType;
 
         return str;
@@ -80,7 +87,7 @@ public class Shoval extends AerialVehicle implements  AerialVehicleService , Aer
     @Override
     public String collectIntelligence() {
 
-        String str = this.pilotName + " " + this.getClass().getName() + " " +
+        String str = this.pilotName + " " + this.getClass().getSimpleName() + " " +
                 this.mission.misiionAction() + " " +  this.sensorType;
 
         return str;

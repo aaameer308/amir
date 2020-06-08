@@ -1,7 +1,7 @@
 package AerialVehicles;
 
 import Missions.AttackMission;
-import Missions.IntelligenceMission;
+import Missions.Mission;
 
 public class Kochav extends AerialVehicle implements  AerialVehicleService , AerialIntelligenceVehicle
         , AerialBdaVehicle , AerialAttackVehicle{
@@ -13,14 +13,22 @@ public class Kochav extends AerialVehicle implements  AerialVehicleService , Aer
     String cameraType =null;
 
 
-    public Kochav(String pilotName, AttackMission attackMission, int flyingHours, boolean flightStatus) {
+
+
+    public Kochav(int numOfMissiles, String tyoeOfMissiles, String cameraType, String sensorType, String pilotName, AttackMission attackMission, int flyingHours, boolean flightStatus) {
         super(pilotName, attackMission, flyingHours, flightStatus);
+        this.numOfMissiles=numOfMissiles;
+        this.tyoeOfMissiles=tyoeOfMissiles;
+        this.cameraType=cameraType;
+        this.sensorType=sensorType;
+
+
     }
 
     @Override
-    public void setMission(IntelligenceMission intelligenceMission) {
+    public void setMission(Mission intelligenceMission) {
         this.mission.setCoordinates(intelligenceMission.coordinates);
-
+        this.mission.setmisiionAction(intelligenceMission.misiionAction());
     }
 
     @Override
@@ -64,7 +72,7 @@ public class Kochav extends AerialVehicle implements  AerialVehicleService , Aer
     @Override
     public String attack() {
 
-        String str =this.pilotName + " " + this.getClass().getName() + " " + this.mission.misiionAction() + " "
+        String str= this.pilotName + ": " + this.getClass().getSimpleName() + " Attacking " + this.mission.misiionAction() + " with: "
                 +  this.tyoeOfMissiles + "X" +  this.numOfMissiles ;
 
         return str;
@@ -73,8 +81,8 @@ public class Kochav extends AerialVehicle implements  AerialVehicleService , Aer
     @Override
     public String preformBda() {
 
-        String str = this.pilotName + " " + this.getClass().getName() + " " +
-                this.mission.misiionAction() + " " +  this.cameraType;
+        String str = this.pilotName + ": " + this.getClass().getSimpleName() + " taking pictures of " +
+                this.mission.misiionAction() + " with: " +  this.cameraType + " camera ";
 
         return str;
     }
@@ -82,9 +90,10 @@ public class Kochav extends AerialVehicle implements  AerialVehicleService , Aer
     @Override
     public String collectIntelligence() {
 
-        String str = this.pilotName + " " + this.getClass().getName() + " " +
-                this.mission.misiionAction() + " " +  this.sensorType;
 
+        String str =this.pilotName + ": " + this.getClass().getSimpleName() + " collecting Data in " + this.mission.misiionAction()
+                + " with sensor type: " +  this.sensorType;
         return str;
+
     }
 }

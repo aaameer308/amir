@@ -16,7 +16,7 @@ public class AttackMission extends Mission {
         super(coordinatesToAttack);
     }
 
-    public void setTarget(String target) {
+    public void setmisiionAction(String target) {
         this.target = target;
     }
 

@@ -15,6 +15,8 @@ public abstract class Mission{
 
     public abstract String misiionAction();
 
+    public abstract void setmisiionAction(String  mission);
+
     public void begin()
     {
         System.out.println("Beginning Mission!");

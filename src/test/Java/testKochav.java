@@ -1,5 +1,14 @@
+import AerialVehicles.Kochav;
+import Entities.Coordinates;
+import Missions.AttackMission;
+import Missions.BdaMission;
+import Missions.IntelligenceMission;
+import Missions.MissionTypeException;
+import org.junit.Test;
 
-/*
+import static org.junit.Assert.assertEquals;
+
+
 
 public class testKochav {
     Coordinates coordinatesToAttack = new Coordinates(31.389906, 34.330190);
@@ -42,6 +51,3 @@ public class testKochav {
         assertEquals(kochav.getHoursOfFlightSinceLastRepair(),0);
     }
 }
-
-*/
-

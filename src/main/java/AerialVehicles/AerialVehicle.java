@@ -1,7 +1,6 @@
 package AerialVehicles;
 
-import Missions.AttackMission;
-import Missions.IntelligenceMission;
+import Missions.BdaMission;
 import Missions.Mission;
 
 
@@ -12,7 +11,7 @@ public abstract class AerialVehicle {
     int flyingHours;
     boolean flightStatus;
 
-    public AerialVehicle(String pilotName, AttackMission attackMission, int flyingHours, boolean flightStatus)
+    public AerialVehicle(String pilotName,Mission attackMission, int flyingHours, boolean flightStatus)
     {
         this.pilotName=pilotName;
         this.mission=attackMission;
@@ -23,9 +22,15 @@ public abstract class AerialVehicle {
 
     }
 
+    public AerialVehicle(String pilotName, BdaMission attackMission, int flyingHours, boolean flightStatus) {
+    }
 
-    public abstract void setMission(IntelligenceMission intelligenceMission);
 
+    public  void setMission(Mission intelligenceMission)
+    {
+
+
+    }
 
     public abstract void setHoursOfFlightSinceLastRepair(int i);
 

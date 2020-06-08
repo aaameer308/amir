@@ -1,7 +1,7 @@
 package AerialVehicles;
 
 import Missions.AttackMission;
-import Missions.IntelligenceMission;
+import Missions.Mission;
 
 public class Eitan extends AerialVehicle implements  AerialVehicleService ,AerialAttackVehicle  , AerialIntelligenceVehicle{
 
@@ -17,6 +17,15 @@ public class Eitan extends AerialVehicle implements  AerialVehicleService ,Aeria
         this.numOfMissiles=i;
         this.tyoeOfMissiles=tyoeOfMissiles;
         this.sensorType=sensorType;
+
+    }
+
+
+
+    public void setMission(Mission intelligenceMission) {
+
+        this.mission.coordinates= intelligenceMission.coordinates;
+        this.mission.setmisiionAction(intelligenceMission.misiionAction());
 
     }
 
@@ -55,7 +64,7 @@ public class Eitan extends AerialVehicle implements  AerialVehicleService ,Aeria
     @Override
     public String attack() {
 
-        String str= this.pilotName + " " + this.getClass().getName() + " " + this.mission.misiionAction() + " with: "
+        String str= this.pilotName + ": " + this.getClass().getSimpleName() + " Attacking " + this.mission.misiionAction() + " with: "
                 +  this.tyoeOfMissiles + "X" +  this.numOfMissiles ;
 
         return str;
@@ -64,18 +73,12 @@ public class Eitan extends AerialVehicle implements  AerialVehicleService ,Aeria
     @Override
     public String collectIntelligence() {
 
-        String str =this.pilotName + " " + this.getClass().getName() + " ms act" + this.mission.misiionAction()
-                + " sensor type: " +  this.sensorType;
+        String str =this.pilotName + ": " + this.getClass().getSimpleName() + " collecting Data in " + this.mission.misiionAction()
+                + " with sensor type: " +  this.sensorType;
         return str;
 
     }
 
-    @Override
-    public void setMission(IntelligenceMission intelligenceMission) {
-
-       this.mission.setCoordinates(intelligenceMission.coordinates);
-
-    }
 
     @Override
     public void setHoursOfFlightSinceLastRepair(int i) {

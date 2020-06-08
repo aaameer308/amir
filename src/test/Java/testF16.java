@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/*
+
 
 public class testF16 {
     Coordinates coordinatesToAttack = new Coordinates(31.389906, 34.330190);
@@ -45,4 +45,3 @@ public class testF16 {
 
 
 
- */

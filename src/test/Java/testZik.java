@@ -7,7 +7,7 @@ import Missions.MissionTypeException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-/*
+
 public class testZik {
     Coordinates coordinatesToAttack = new Coordinates(31.389906, 34.330190);
     AttackMission attackMission = new AttackMission("suspect house", coordinatesToAttack);
@@ -54,4 +54,3 @@ public class testZik {
 
 
 
- */

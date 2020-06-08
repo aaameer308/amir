@@ -1,7 +1,7 @@
 package AerialVehicles;
 
-import Missions.AttackMission;
-import Missions.IntelligenceMission;
+import Missions.BdaMission;
+import Missions.Mission;
 
 public class Zik extends AerialVehicle implements  AerialVehicleService , AerialIntelligenceVehicle , AerialBdaVehicle {
 
@@ -10,16 +10,20 @@ public class Zik extends AerialVehicle implements  AerialVehicleService , Aerial
 
     String cameraType =null;
 
-    public Zik(String pilotName, AttackMission attackMission, int flyingHours, boolean flightStatus) {
+
+
+    public Zik(String thermal, String elint, String pilotName, BdaMission attackMission, int flyingHours, boolean flightStatus) {
         super(pilotName, attackMission, flyingHours, flightStatus);
+        this.sensorType=elint;
+        this.cameraType=thermal;
+
     }
 
 
-
     @Override
-    public void setMission(IntelligenceMission intelligenceMission) {
+    public void setMission(Mission intelligenceMission) {
         this.mission.setCoordinates(intelligenceMission.coordinates);
-
+        this.mission.setmisiionAction(intelligenceMission.misiionAction());
     }
 
     @Override
@@ -64,7 +68,7 @@ public class Zik extends AerialVehicle implements  AerialVehicleService , Aerial
     public String preformBda() {
 
 
-        String str = this.pilotName + " " + this.getClass().getName() + " " +
+        String str = this.pilotName + " " + this.getClass().getSimpleName() + " " +
                 this.mission.misiionAction() + " " +  this.cameraType;
 
         return str;
@@ -73,7 +77,7 @@ public class Zik extends AerialVehicle implements  AerialVehicleService , Aerial
     @Override
     public String collectIntelligence() {
 
-        String str = this.pilotName + " " + this.getClass().getName() + " " +
+        String str = this.pilotName + " " + this.getClass().getSimpleName() + " " +
                 this.mission.misiionAction() + " " +  this.sensorType;
 
         return str;

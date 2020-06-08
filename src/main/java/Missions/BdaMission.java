@@ -15,4 +15,11 @@ public class BdaMission extends Mission implements  MissionService{
     public String misiionAction() {
         return  this.objective;
     }
+
+    @Override
+    public void setmisiionAction(String str) {
+        this.objective=str;
+    }
+
+
 }
