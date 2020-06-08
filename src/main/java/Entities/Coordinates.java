@@ -2,13 +2,14 @@ package Entities;
 
 public class Coordinates {
     Double longitude;
+    Double latitude;
 
     public Coordinates(Double longitude, Double latitude) {
         this.longitude = longitude;
         this.latitude = latitude;
     }
 
-    Double latitude;
+
 
     public Double getLatitude() {
         return latitude;

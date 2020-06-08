@@ -1,5 +1,4 @@
-import AerialVehicles.FighterJets.F15;
-import AerialVehicles.UAVs.Haron.Eitan;
+import AerialVehicles.Eitan;
 import Entities.Coordinates;
 import Missions.AttackMission;
 import Missions.BdaMission;
@@ -22,6 +21,7 @@ public class testEitan {
         String message = eitan.attack();
         assertEquals(message, expectedMessage);
     }
+
 
     @Test
     public void testCollectIntelligence() throws MissionTypeException {
@@ -49,5 +49,9 @@ public class testEitan {
         eitan.setHoursOfFlightSinceLastRepair(155);
         eitan.check();
         assertEquals(eitan.getHoursOfFlightSinceLastRepair(),0);
+
     }
+
+
+
 }

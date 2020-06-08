@@ -1,6 +1,4 @@
-import AerialVehicles.FighterJets.F16;
-import AerialVehicles.UAVs.Haron.Shoval;
-import AerialVehicles.UAVs.Hermes.Zik;
+import AerialVehicles.Zik;
 import Entities.Coordinates;
 import Missions.AttackMission;
 import Missions.BdaMission;
@@ -9,7 +7,7 @@ import Missions.MissionTypeException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
+/*
 public class testZik {
     Coordinates coordinatesToAttack = new Coordinates(31.389906, 34.330190);
     AttackMission attackMission = new AttackMission("suspect house", coordinatesToAttack);
@@ -53,3 +51,7 @@ public class testZik {
         assertEquals(zik.getHoursOfFlightSinceLastRepair(),0);
     }
 }
+
+
+
+ */

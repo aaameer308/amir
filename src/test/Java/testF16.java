@@ -1,9 +1,4 @@
-import AerialVehicles.FighterJets.F15;
-import AerialVehicles.FighterJets.F16;
-import AerialVehicles.UAVs.Haron.Eitan;
-import AerialVehicles.UAVs.Haron.Shoval;
-import AerialVehicles.UAVs.Hermes.Kochav;
-import AerialVehicles.UAVs.Hermes.Zik;
+import AerialVehicles.F16;
 import Entities.Coordinates;
 import Missions.AttackMission;
 import Missions.BdaMission;
@@ -12,6 +7,8 @@ import Missions.MissionTypeException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+
+/*
 
 public class testF16 {
     Coordinates coordinatesToAttack = new Coordinates(31.389906, 34.330190);
@@ -45,3 +42,7 @@ public class testF16 {
         }
     }
 }
+
+
+
+ */

@@ -1,7 +1,19 @@
 package Missions;
 
-import AerialVehicles.AerialIntelligenceVehicle;
-import AerialVehicles.AerialVehicle;
+import Entities.Coordinates;
 
-public class IntelligenceMission{
+public class IntelligenceMission extends Mission implements  MissionService{
+
+    private  String region;
+
+    public IntelligenceMission(String region, Coordinates coordinatesToAttack) {
+        super(coordinatesToAttack);
+        this.region=region;
+    }
+
+    @Override
+    public String misiionAction() {
+        return  this.region;
+
+    }
 }
