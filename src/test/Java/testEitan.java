@@ -28,6 +28,7 @@ public class testEitan {
         eitan.setMission(intelligenceMission);
         String expectedMessage = "Sheleg: Eitan Collecting Data in Deir al Balah with sensor type: elint";
         String message = eitan.collectIntelligence();
+
         assertEquals(message,expectedMessage);
     }
 

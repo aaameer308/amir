@@ -73,7 +73,7 @@ public class Eitan extends AerialVehicle implements  AerialVehicleService ,Aeria
     @Override
     public String collectIntelligence() {
 
-        String str =this.pilotName + ": " + this.getClass().getSimpleName() + " collecting Data in " + this.mission.misiionAction()
+        String str =this.pilotName + ": " + this.getClass().getSimpleName() + " Collecting Data in " + this.mission.misiionAction()
                 + " with sensor type: " +  this.sensorType;
         return str;
 
