@@ -74,8 +74,8 @@ public class F16 extends AerialVehicle implements  AerialVehicleService , Aerial
     @Override
     public String preformBda() {
 
-        String str = this.pilotName + ": " + this.getClass().getSimpleName() + " taking pictures of " +
-                this.mission.misiionAction() + " with: " +  this.cameraType + " camera ";
+        String str =  this.pilotName + ": " + this.getClass().getSimpleName() + " taking pictures of " +
+                this.mission.misiionAction() + " with: " +  this.cameraType + " camera";
 
         return str;
     }

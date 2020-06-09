@@ -7,15 +7,15 @@ public class Zik extends AerialVehicle implements  AerialVehicleService , Aerial
 
     static  int hourTreatment =100;
     String sensorType = null;
-
     String cameraType =null;
 
 
 
     public Zik(String thermal, String elint, String pilotName, BdaMission attackMission, int flyingHours, boolean flightStatus) {
         super(pilotName, attackMission, flyingHours, flightStatus);
-        this.sensorType=elint;
         this.cameraType=thermal;
+        this.sensorType=elint;
+
 
     }
 
@@ -68,8 +68,8 @@ public class Zik extends AerialVehicle implements  AerialVehicleService , Aerial
     public String preformBda() {
 
 
-        String str = this.pilotName + " " + this.getClass().getSimpleName() + " " +
-                this.mission.misiionAction() + " " +  this.cameraType;
+        String str = this.pilotName + ": " + this.getClass().getSimpleName() + " taking pictures of " +
+                this.mission.misiionAction() + " with: " +  this.cameraType + " camera";
 
         return str;
     }
@@ -77,9 +77,8 @@ public class Zik extends AerialVehicle implements  AerialVehicleService , Aerial
     @Override
     public String collectIntelligence() {
 
-        String str = this.pilotName + " " + this.getClass().getSimpleName() + " " +
-                this.mission.misiionAction() + " " +  this.sensorType;
-
+        String str =this.pilotName + ": " + this.getClass().getSimpleName() + " Collecting Data in " + this.mission.misiionAction()
+                + " with sensor type: " +  this.sensorType;
         return str;
     }
 }

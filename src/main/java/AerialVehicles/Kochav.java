@@ -82,7 +82,7 @@ public class Kochav extends AerialVehicle implements  AerialVehicleService , Aer
     public String preformBda() {
 
         String str = this.pilotName + ": " + this.getClass().getSimpleName() + " taking pictures of " +
-                this.mission.misiionAction() + " with: " +  this.cameraType + " camera ";
+                this.mission.misiionAction() + " with: " +  this.cameraType + " camera";
 
         return str;
     }

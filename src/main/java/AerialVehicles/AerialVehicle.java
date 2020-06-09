@@ -1,6 +1,5 @@
 package AerialVehicles;
 
-import Missions.BdaMission;
 import Missions.Mission;
 
 
@@ -22,8 +21,6 @@ public abstract class AerialVehicle {
 
     }
 
-    public AerialVehicle(String pilotName, BdaMission attackMission, int flyingHours, boolean flightStatus) {
-    }
 
 
     public  void setMission(Mission intelligenceMission)

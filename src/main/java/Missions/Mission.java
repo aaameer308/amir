@@ -38,7 +38,10 @@ public abstract class Mission{
     }
 
     public void setCoordinates(Coordinates coordinates) {
+        System.out.println("setCoordinates 1");
         this.coordinates = coordinates;
+        System.out.println("setCoordinates 2");
+
     }
 
 }
